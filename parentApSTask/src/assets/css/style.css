@@ -1,4 +1,3 @@
-
 /* ******** Global style ********* */
 body {
     background-color: #f5f5f5;
@@ -6,3 +5,167 @@ body {
 a, button {
     cursor: pointer;
 }
+button.bordered {
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #8e44ad;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'roboto-bold';
+    font-weight: normal;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+button.btn:hover {
+    color: #fff;
+    background-color: #8e44ad;
+}
+input {
+    border-color: #d6dbe4;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+label {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7f8c8d;
+}
+.form-group {
+    position: relative;
+}
+.invalid-feedback {
+    position: absolute;
+    right: 20px;
+    bottom: -7px;
+    padding: 0px;
+    background: #dc3545;
+    color: #fff;
+    text-align: center;
+    width: 50%;
+    border-radius: 20px;
+}
+button.login-btn,
+.navbar-nav .nav-item button.enquire {
+    width: 112px;
+    height: 40px;
+    text-transform: uppercase;
+    color: #fff;
+}
+button.cancel-btn, button.add-btn {
+    width: 48% !important;
+    height: 40px !important;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid transparent; 
+}
+button.cancel-btn {
+    margin-right: 2% !important;
+    color: #8e44ad;
+    background-color: #f5f5f5;
+    border-color: #8e44ad;
+}
+button.cancel-btn:hover {
+    background-color: #8e44ad !important;
+    color: #fff  !important;
+    border: 1px solid #8e44ad !important;
+}
+button.add-btn:hover {
+    background-color: #f5f5f5  !important;
+    color: #8e44ad !important;
+    border-color: #8e44ad  !important;
+}
+/* ******* End Global style ******* */
+
+/* ******* Start primeng style ******* */
+body .ui-messages.ui-messages-error {
+    padding: 10px;
+    border-radius: 4px;
+}
+body .ui-messages .ui-messages-close {
+    color: #34495e;
+    font-size: 14px;
+    top: 8px;
+}
+body .ui-messages .ui-messages-detail {
+    font-family: 'roboto-bold';
+}
+/* ******* End primeng style ********* */
+
+/* *********** Start NavBar *********** */
+nav.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.navbar-light .navbar-nav .nav-link {
+    text-transform: uppercase;
+    font-family: 'roboto-bold';
+    font-size: 15px;
+    color: #34495e;
+    padding-right: 30px;
+}
+/* *********** End NavBar ********** */
+
+/* ********* Start Login ********** */
+.login-container {
+    width: 767px;
+    height: 567px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    margin: 100px auto;
+}
+.login-container .form-container {
+    padding: 134px 15px;
+    width: 100%;
+}
+.login-container .form-container .welcome-back {
+    font-size: 25px;
+    font-family: 'roboto-bold';
+    color: #34495e;
+    margin: 0px 0px 10px;
+}
+.login-container .form-container p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #7f8c8d;
+    margin: 0px 0px 25px;
+}
+.login-container .form-container p span {
+    color: #8e44ad;
+}
+.login-container .form-container label {
+    margin: 0px 0px 5px;
+}
+.login-container .form-container .forgot-password {
+    font-size: 14px;
+    color: #8e44ad;
+    line-height: 40px;
+}
+/* ********* End Login ********** */
+
+/* ******* Start Footer ********** */
+footer {
+    background-color: #fff;
+    padding: 15px 0px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+}
+footer p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #34495e;
+}
+/* ************ End Footer ******** */

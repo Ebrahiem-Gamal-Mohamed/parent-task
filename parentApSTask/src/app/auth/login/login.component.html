@@ -1,3 +1,46 @@
-<p>
-  login works!
-</p>
+<section class="login-container">
+  <div class="d-flex">
+    <aside>
+      <img src="/assets/images/png/login-back.png" alt="login-image" />
+    </aside>
+    <div class="form-container">
+      <h2 class="welcome-back">Welcome back&#33;</h2>
+      <p>Please login to access your <span>Spaces</span> Dashboard</p>
+      <form novalidator [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <p-messages [(value)]="msgs"></p-messages>
+        <div class="form-row">
+          <div class="col-md-12 col-12">
+            <div class="form-group">
+              <label for="username">Username &#47; Email</label>
+              <input type="text" placeholder="Username or Email..." formControlName="username" autocomplete="off" class="form-control"
+                [ngClass]="{ 'is-invalid': hasErrors('username') }" />
+              <div *ngIf="hasErrors('username')" class="invalid-feedback">
+                <div *ngIf="hasError('username', 'required')">Username is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-12 col-12">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" placeholder="Password..." formControlName="password" autocomplete="off" class="form-control"
+                [ngClass]="{ 'is-invalid': hasErrors('password') }" />
+              <div *ngIf="hasErrors('password')" class="invalid-feedback">
+                <div *ngIf="hasError('password', 'required')">Password is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-5 col-6">
+            <a class="forgot-password" [routerLink]="['forgot-password']">Forgot password&#63;</a>
+          </div>
+          <div class="col-md-7 col-6 text-right">
+            <button [disabled]="loginForm.invalid" class="btn login-btn bordered ml-auto">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
