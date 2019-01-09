@@ -1,3 +1,54 @@
-<p>
-  users-list works!
-</p>
+<app-bread-crumb [bread_link]="page_link" [bread_title]="page_title"></app-bread-crumb>
+<!-- Toast for events status  -->
+<p-toast position="top-right" [style]="{marginTop: '80px'}"></p-toast>
+
+<div class="container">
+  <div class="users-wrapper">
+    <div class="wrapper-body">
+      <div class="wrapper-header">
+        <ul class="list-unstyled  d-flex">
+          <li>User</li>
+          <li class="ml-auto">Actions</li>
+        </ul>
+      </div>
+      <ul class="list-unstyled">
+        <li *ngFor="let user of usersList.data">
+          <a class="d-flex" (click)="showUserData(user)">
+            <div class="user-info d-flex">
+              <div class="img-container">
+                <img [src]="user?.avatar || '/assets/images/svg/user.svg'" [ngClass]="{'user-photo' : (user.avatar != '/assets/images/svg/user.svg')}"
+                  alt="user photo" />
+              </div>
+              <h3 class="user-name ml-2">{{ user?.first_name }} {{ user?.last_name }}</h3>
+            </div>
+            <div class="controls d-flex ml-auto">
+              <button (click)="editUserData(user)" pTooltip="Edit User" tooltipPosition="top">
+                <img class="mb-1" src="assets/images/svg/edit-icon.svg">
+              </button>
+              <button (click)="deleteUser(user)" pTooltip="Delete User" tooltipPosition="top">
+                <img class="mb-1" src="assets/images/svg/delete-icon.svg">
+              </button>
+              <button class="ml-3" (click)="showUserData(user)" pTooltip="Show User Details" tooltipPosition="top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12">
+                  <path fill="#8E44AD" fill-rule="evenodd" d="M2-.07L.5 1.43 5.07 6 .5 10.57l1.5 1.5L8.07 6z" />
+                </svg>
+              </button>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
+
+      <div *ngIf="!finished" class="spinner-wrapper text-center">
+        <img class="sppiner-icon" src="/assets/images/svg/spinner-frame.svg" alt="spinner-icon" />
+        <p class="loading-new-user">Loading more users</p>
+      </div>
+
+      <div *ngIf="finished" class="spinner-wrapper text-center">
+        <p class="loading-new-user">No More Users</p>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -116,6 +116,80 @@ nav.navbar {
 }
 /* *********** End NavBar ********** */
 
+/* ********* Start BreadCrumb *********** */
+.bread-crumb {
+    background-color: #dedede;
+    padding: 15px;
+    margin-top: 70px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.bread-crumb .bread-header li {
+    color: #34495e;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+.bread-crumb .bread-header li a {
+    color: #8e44ad;
+}
+.bread-crumb .bread-body .bread-title {
+    font-size: 30px;
+    font-family: 'roboto-bold';
+    color: #34495e;
+    text-transform: capitalize;
+}
+.bread-crumb .bread-body button {
+    width: 115px;
+    height: 40px;
+    text-transform: capitalize;
+    position: relative;
+}
+.bread-crumb .bread-body button:hover {
+    color: #fff;
+}
+.bread-crumb .bread-body button span {
+    padding: 0px 0px 0px 20px;
+}
+.bread-crumb .bread-body button span:before,
+.bread-crumb .bread-body button span:after {
+    width: 2px;
+    height: 14px;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    top: 13px;
+    left: 18px;
+}
+.bread-crumb .bread-body button span:before {
+    transform: rotate(90deg);
+}
+/* Start add Button */
+.bread-crumb .bread-body button {
+    width: 115px;
+    height: 40px;
+    text-transform: capitalize;
+    position: relative;
+}
+.bread-crumb .bread-body button span {
+    padding: 0px 0px 0px 20px;
+}
+.bread-crumb .bread-body button span:before,
+.bread-crumb .bread-body button span:after {
+    width: 2px;
+    height: 14px;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    top: 13px;
+    left: 18px;
+}
+.bread-crumb .bread-body button span:before {
+    transform: rotate(90deg);
+}
+/* End add Button */
+/* ****** End BreadCrumb *********** */
+
 /* ********* Start Login ********** */
 .login-container {
     width: 767px;
@@ -154,6 +228,113 @@ nav.navbar {
 }
 /* ********* End Login ********** */
 
+
+/* ********* Start Users List ********* */
+.users-wrapper {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    margin: 30px 0px 100px;
+    padding: 15px;
+} 
+.users-wrapper .wrapper-body ul li {
+    border-bottom: 1px solid #dedede;
+    padding: 15px 0px;
+}
+.users-wrapper .wrapper-body ul li:last-child {
+    border: none;
+}
+.users-wrapper .wrapper-body ul li a {
+    padding: 15px 20px 15px 15px;
+    min-height: 85px;
+    border-radius: 10px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.users-wrapper .wrapper-body ul li a .controls-after {
+    display: none !important;
+}
+.users-wrapper .wrapper-body ul li a.active .controls-after {
+    display: inline-block !important;
+}
+.users-wrapper .wrapper-body ul li a:hover {
+    background-color: rgba(142, 68, 173, 0.05);
+}
+.users-wrapper .wrapper-body ul li a.active {
+    background-color: rgb(142, 68, 173);
+}
+.users-wrapper .wrapper-body ul li a.active .img-container .user-photo {
+    border: 1px solid #fff;
+}
+.users-wrapper .wrapper-header ul {
+    margin: 0px;
+    padding: 15px 117px 0px 15px;
+}
+.users-wrapper .wrapper-header ul li {
+    font-size: 12px;
+    font-weight: 500;
+    color: #7f8c8d;
+    text-transform: capitalize;
+    border: none;
+}
+.users-wrapper .img-container {
+    background-color: #7f8c8d;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 48px;
+}
+.users-wrapper .img-container .user-photo {
+    border-radius: 100%;
+    width: 55px;
+    height: 55px;
+}
+.users-wrapper .user-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #34495e;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+  line-height: 55px;
+}
+.users-wrapper .wrapper-body ul li a.active .user-name {
+    color: #fff;
+}
+.wrapper-body .spinner-wrapper .loading-new-user {
+    font-size: 12px;
+    font-weight: 500;
+    color: #8e44ad;
+}
+.wrapper-body .spinner-wrapper .sppiner-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 5px auto;
+}
+.controls {
+    margin-top: 15px;
+}
+.controls button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid #8e44ad;
+    margin-right: 15px;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+.controls button:last-child {
+    margin-right: 0px;
+    margin-left: 40px;
+    border: none;
+    background-color: transparent;
+}
+/* ********* Start Users List ********** */
+
 /* ******* Start Footer ********** */
 footer {
     background-color: #fff;
@@ -169,3 +350,17 @@ footer p {
     color: #34495e;
 }
 /* ************ End Footer ******** */
+
+/* ****** Responsive ******** */
+@media (max-width: 425px) {
+    .users-wrapper .wrapper-body ul li a {
+        display: block !important;
+    }
+    .users-wrapper .wrapper-header ul {
+        padding: 15px 15px 0px 15px;
+    }
+    .controls {
+        text-align: right;
+        display: block !important;
+    }
+}

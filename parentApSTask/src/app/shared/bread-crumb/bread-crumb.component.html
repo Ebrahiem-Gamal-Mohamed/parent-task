@@ -1,3 +1,13 @@
-<p>
-  bread-crumb works!
-</p>
+<div class="bread-crumb">
+  <div class="container">
+    <ul class="bread-header list-unstyled d-flex">
+      <li><a [routerLink]="['home']"> home </a></li>
+      <li>&nbsp; &#47; &nbsp;</li>
+      <li><a> {{ bread_link }} </a></li>
+    </ul>
+    <div class="bread-body d-flex">
+      <h3 class="bread-title">{{ bread_title }}</h3>
+      <app-add-user class="ml-auto"></app-add-user>
+    </div>
+  </div>
+</div>
