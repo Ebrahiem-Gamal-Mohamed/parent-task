@@ -1,0 +1,65 @@
+
+@font-face {
+  font-family: 'roboto-black';
+  src: url('../fonts/roboto-black-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'roboto-bold';
+  src: url('../fonts/roboto-bold-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'roboto-light';
+  src: url('../fonts/roboto-light-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'roboto-medium';
+  src: url('../fonts/roboto-medium-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'roboto-regular';
+  src: url('../fonts/roboto-regular-webfont.woff2') format('woff2');
+}
+
+body,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+textarea,
+.widget-text h5,
+h3.centered-headline span,
+select,
+.button,
+input[type=button],
+input[type=submit],
+button,
+.infobox,
+#navigation,
+.infobox a,
+.pagination-container,
+.upload-btn,
+.skills span,
+.app-content .info span,
+.tabs-nav li a,
+.reply,
+.ui-accordion .ui-accordion-header,
+.trigger a,
+.caption.title,
+.caption .slider-button,
+.counter,
+.counter-box i,
+a.menu-trigger,
+#style-switcher h2,
+.resume-table strong,
+.listing-badge,
+.listing-type,
+.listing-date,
+.category-small-box span,
+.testimonial,
+.testimonial p {
+  font-family: "roboto-regular";
+}
