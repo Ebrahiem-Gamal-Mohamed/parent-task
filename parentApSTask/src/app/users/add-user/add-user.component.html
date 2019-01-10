@@ -2,3 +2,14 @@
   <span>new user</span>
 </button>
 
+<p-dialog [(visible)]="displayDialog" 
+          [showHeader]="false"
+          [focusOnShow]="false"
+          [dismissableMask]="false"
+          [resizable]="false"
+          [draggable]="false"
+          [modal]="true"
+          styleClass="user-dialog"
+          >
+  <app-user-form (dialogStatus)="hideDialog($event)" [addNew]='true'></app-user-form>
+</p-dialog>

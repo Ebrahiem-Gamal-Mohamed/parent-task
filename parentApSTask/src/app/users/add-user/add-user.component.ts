@@ -6,14 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
+  displayDialog: boolean;
 
-  constructor() { }
+  constructor() {
+    this.displayDialog = false;
+  }
 
   ngOnInit() {
   }
 
   showUserDialog() {
+    this.displayDialog = true;
+  }
 
+  hideDialog(event: boolean) {
+    this.displayDialog = event;
   }
 
 }

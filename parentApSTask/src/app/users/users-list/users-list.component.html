@@ -3,7 +3,7 @@
 <p-toast position="top-right" [style]="{marginTop: '80px'}"></p-toast>
 
 <div class="container">
-  <div class="users-wrapper">
+  <div class="users-wrapper"  [ngClass]="{'d-flex' : userSelected }">
     <div class="wrapper-body">
       <div class="wrapper-header">
         <ul class="list-unstyled  d-flex">
@@ -50,5 +50,24 @@
       </div>
 
     </div>
+    <app-user-details *ngIf="userSelected" [userSelected]="userSelected" [userData]="userData"></app-user-details>
   </div>
 </div>
+
+<p-dialog [(visible)]="displayDialog" 
+          [showHeader]="false" 
+          [focusOnShow]="false" 
+          [dismissableMask]="false" 
+          [resizable]="false"
+          [draggable]="false" 
+          [modal]="true" 
+          styleClass="user-dialog">
+  <app-user-form (dialogStatus)="hideDialog($event)" [addNew]='addNewUser' [userData]="userData"></app-user-form>
+</p-dialog>
+
+<p-confirmDialog #cd [closable]="false">
+  <p-footer>
+    <button class="bordered cancel-btn" type="button" pButton label="No" (click)="cd.reject()"></button>
+    <button class="bordered add-btn" type="button" pButton label="Yes" (click)="cd.accept()"></button>
+  </p-footer>
+</p-confirmDialog>

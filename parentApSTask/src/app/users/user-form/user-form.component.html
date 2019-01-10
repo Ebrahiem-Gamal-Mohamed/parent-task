@@ -1,3 +1,36 @@
-<p>
-  user-form works!
-</p>
+<form novalidator [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-user-img">
+        <img [src]="userData?.avatar || '/assets/images/svg/user.svg'" [ngClass]="{'user-img': userData?.avatar }" />
+    </div>
+    <div class="form-row mt-5">
+        <div class="col-md-12 col-12">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input value="{{userData?.first_name}} {{userData?.last_name}}" type="text" placeholder="Name..." formControlName="name" autocomplete="off" class="form-control"
+                    [ngClass]="{ 'is-invalid': hasErrors('name') }" />
+                <div *ngIf="hasErrors('name')" class="invalid-feedback">
+                    <div *ngIf="hasError('name', 'required')">Name is required</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-12 col-12">
+            <div class="form-group">
+                <label for="job_title">Job title</label>
+                <input type="text" placeholder="Job title..." formControlName="job_title" autocomplete="off" class="form-control"
+                    [ngClass]="{ 'is-invalid': hasErrors('job_title') }" />
+                <div *ngIf="hasErrors('job_title')" class="invalid-feedback">
+                    <div *ngIf="hasError('job_title', 'required')">Job Title is required</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-footer mt-2">
+        <button class="cancel-btn bordered" type="button" (click)="cancelAddingUser()">Cancel</button>
+        <button *ngIf="addNew" class="add-btn bordered" type="submit">Add</button>
+        <button *ngIf="!addNew" class="add-btn bordered" type="submit">Save</button>
+    </div>
+</form>
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
