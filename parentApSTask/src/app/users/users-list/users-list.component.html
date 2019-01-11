@@ -12,8 +12,8 @@
         </ul>
       </div>
       <ul class="list-unstyled">
-        <li *ngFor="let user of usersList.data">
-          <a class="d-flex" (click)="showUserData(user)">
+        <li *ngFor="let user of usersList.data;let i = index" (click)="showUserData(user)">
+          <a class="d-flex" (click)="setSelectedUser(i)" [ngClass]="{'active': (i == rowSelected)}">
             <div class="user-info d-flex">
               <div class="img-container">
                 <img [src]="user?.avatar || '/assets/images/svg/user.svg'" [ngClass]="{'user-photo' : (user.avatar != '/assets/images/svg/user.svg')}"

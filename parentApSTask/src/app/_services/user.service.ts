@@ -12,11 +12,14 @@ export class UserService {
   page_number: number;
 
   constructor(private http: HttpClient) {
-      this.page_number = 1;
    }
 
   getAll() {
-      return this.http.get<User[]>(`${Globals.apiUrl}/users`, { params: { page: JSON.stringify(this.page_number) } });
+      const query = {
+        page: JSON.stringify(this.page_number)
+      };
+
+      return this.http.get<User[]>(`${Globals.apiUrl}/users`, { params: query });
   }
 
   getById(id: number) {

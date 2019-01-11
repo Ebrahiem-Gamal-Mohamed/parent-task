@@ -22,6 +22,7 @@ export class UsersListComponent implements OnInit {
   finished: boolean;
   addNewUser: boolean;
   userData: any;
+  rowSelected: number;
 
   constructor(
     private userService: UserService,
@@ -67,9 +68,13 @@ export class UsersListComponent implements OnInit {
         });
       },
       reject: () => {
-        this.messageService.add({ severity: 'error', summary: 'Error Message', detail: 'User did not be deleted!' });
+        console.log("user didn't be deleted");
       }
     });
+  }
+
+  setSelectedUser(i: number) {
+    this.rowSelected = i;
   }
 
   showUserData(user: User) {

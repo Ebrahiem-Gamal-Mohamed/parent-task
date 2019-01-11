@@ -277,8 +277,17 @@ nav.navbar {
 .users-wrapper .wrapper-body ul li a.active {
     background-color: rgb(142, 68, 173);
 }
-.users-wrapper .wrapper-body ul li a.active .img-container .user-photo {
+.users-wrapper .wrapper-body ul li a.active .img-container {
     border: 1px solid #fff;
+}
+.users-wrapper .wrapper-body ul li a.active .controls button {
+    display: none;
+}
+.users-wrapper .wrapper-body ul li a.active .controls button:last-child {
+    display: inline;
+}
+.users-wrapper .wrapper-body ul li a.active .controls button svg path {
+    fill: #fff !important;
 }
 .users-wrapper .wrapper-header ul {
     margin: 0px;

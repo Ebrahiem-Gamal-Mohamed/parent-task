@@ -17,8 +17,9 @@ export class UserFormComponent implements OnInit {
 
   @Output() dialogStatus = new EventEmitter();
   @Input() addNew: boolean;
-  @Input() userData: User;
+  @Input() userData: any;
   userForm: FormGroup;
+  submitted: boolean;
   msgs: Message[] = [];
 
   constructor(
@@ -29,6 +30,7 @@ export class UserFormComponent implements OnInit {
     private userService: UserService
   ) {
     this.addNew = true;
+    this.submitted = false;
     // redirect to home if already logged in
     if (!this.authenticationService.currentUserValue) {
       this.router.navigate(['/login']);
@@ -54,6 +56,7 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
     // stop here if form is invalid
     if (this.userForm.invalid) {
       return;
